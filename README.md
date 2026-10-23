@@ -1,40 +1,30 @@
-# DIY 120W Power Bank
+# DIY power bank: 120 W target
 
-Disclaimer: This project is still in progress, and there may be slight imperfections in the models or component fit.
+I started this project to design a compact power bank with a custom enclosure and a high output power target. The case has cutouts for USB-A, USB-C, and a DC input, with my name and logo on the shell.
 
-I set out to build a high-power, compact 120-watt power bank. My goals were: high output power and a custom-designed circuit. The case has cutouts for ports (USB-A, USB-C, DC input). The outer shell is engraved with my logo and name to give it a personal touch.
+The design is still in progress. **120 W is the target**, and this repo doesn't include a load test confirming that output.
 
-![P3.png](/CAD/Images/P3.png) ![P1.png](/CAD/Images/P1.png)
----
+![Enclosure design](CAD/Images/P3.png)
+![Another enclosure view](CAD/Images/P1.png)
 
-## How to Build
+## What's here
 
-- **Print the case**: The enclosure was designed in SolidWorks and is best printed in PETG for its thermal resistance and strength. A 3 mm wall thickness work well.
-  
-- **Prepare the electronics**:
-  - Solder battery connectors to the 3S BMS board. Ensure polarity is correct.
-  - Splice a USB-C cable and connect it to the BMS or buck-boost converter input for charging.
-  - Connect the boost converter output to both the USB-A and USB-C output ports.
-  - Attach the DC barrel jack to the BMS and buck module input if you plan to support DC charging.
-  - Dont forget to add the voltmeter and battery lcds.
+I designed the case in SolidWorks around the batteries, converters, connectors, and displays. PETG and a 3 mm wall were the starting choices for the printed enclosure, but component fit still needs checking against the actual parts.
 
-- **Install components**:
-  - Begin by placing the battery cells securely in the case and soldering them to the BMS.
-  - Mount the BMS, buck/boost converter, and output modules using screws or adhesive pads.
-  - Fit the USB-A, USB-C, and DC jack into their respective cutouts.
-  - Tidy up wiring with shrink tubing or small cable ties to prevent short circuits.
+The planned electronics use six 18650 cells, battery protection boards, converter modules, a voltage/current display, and a battery indicator. The component list is a record of the design stage; it doesn't establish the finished pack's charging support or usable output power.
 
-- **Power it up**:
-  - Double-check all connections, especially battery polarity and grounding.
-  - Insert a multimeter to test voltage on the output before plugging in any devices.
-  - Once verified, you can use the power bank to charge phones, laptops, or any compatible USB devices up to 120 watts.
+## Design files
 
----
+- [SolidWorks case](CAD/Power%20Bank%20case.SLDPRT)
+- [Printable STL](CAD/Power%20Bank%20case.STL)
+- [Circuit diagram](CAD/Circuit%20diagram.png)
+- [Build journal](JOURNAL.md)
+- [BOM](BOM.csv) and [additional BOM files](BOM/)
+- [License](LICENSE.MD)
 
-## BOM 
+## Original parts estimate
 
-
-# Component List and Cost Breakdown
+These are the original component prices and supplier links. The rows below add up to **2,878 EGP**; the old README's total was 100 EGP short. This is a parts estimate from that stage, not a current quote.
 
 | Component                          | Qty | EGP/Unit | Sum EGP | Sum USD | Purpose                 | Link |
 |-----------------------------------|-----|----------|---------|---------|--------------------------|------|
@@ -53,11 +43,4 @@ I set out to build a high-power, compact 120-watt power bank. My goals were: hig
 | 0.2×8 mm plated nickel strip (1m)| 1m  | 18       | 18      | 0.36    | Battery weld tabs        | [Link](https://microohm-eg.com/ar/product/0-2-x-8-mm-plated-nickel-strip-for-battery-connection-welding-1-meter/) |
 | Aluminium soldering flux (10mL)  | 1   | 60       | 60      | 1.21    | Soldering aid            | [Link](https://makerselectronics.com/product/aluminium-soldering-liquid-flux-10ml) |
 
----
-
-### 💰 Summary
-
-- **Total Cost (EGP):** 2778 EGP  
-- **Total Cost :** $56
-
-
+I'll need to check the finished wiring, charging circuit, thermal performance, and output under load before calling this a working 120 W power bank.
